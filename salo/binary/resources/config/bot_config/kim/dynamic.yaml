@@ -1,0 +1,19 @@
+high_scores:
+  max_n_messages:
+    n_messages: 3281
+    id: kim_networking_vkgroup_370841583
+    name: Daniel Mercière
+  game_guess_word:
+    wins: 42
+    loses: 3
+    id: kim_networking_vkgroup_448915950
+    name: Daenerys Targaryen
+  game_word_chain:
+    high_score: 110
+    id: kim_networking_vkgroup_531602696
+    name: "'Adam 'sexxxxxxxxxxxxxxxx"
+  teachmode:
+    max_teachmessages:
+      n_messages: 265
+      id: kim_networking_vkgroup_141517846
+      name: Оля Чмелёва

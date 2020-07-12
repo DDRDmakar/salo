@@ -1,0 +1,11 @@
+additions:
+    - { mode: insert, path: fetcher_keyword, value: bogdan }
+    - { mode: insert, path: fetcher_keyword, value: mamkin }
+    - { mode: insert, path: fetcher_keyword, value: богдан }
+    - { mode: insert, path: fetcher_keyword, value: мамкин }
+    
+    - { mode: insert, path: primary_keyword, value: bogdan }
+    - { mode: insert, path: primary_keyword, value: mamkin }
+    - { mode: insert, path: primary_keyword, value: богдан }
+    - { mode: insert, path: primary_keyword, value: мамкин }
+    

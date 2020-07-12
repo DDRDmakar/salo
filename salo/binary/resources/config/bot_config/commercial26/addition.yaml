@@ -1,0 +1,19 @@
+
+additions:
+    - { mode: insert, path: fetcher_keyword, value: bot }
+    - { mode: insert, path: fetcher_keyword, value: бот }
+    
+    - { mode: insert, path: primary_keyword, value: bot }
+    - { mode: insert, path: primary_keyword, value: бот }
+    
+    - { mode: set, path: available/history, value: false }
+        
+    # Enable database editing commands
+    - { mode: set, path: cmd/all/db_add/active,    value: yes }
+    - { mode: set, path: cmd/all/db_remove/active, value: yes }
+    
+    # Commercial help head
+    - { mode: set, path: 'cmd/all/help_main/command',  value: cmd get_config_text --list help/contact_link_commercial help/main  }
+    - { mode: set, path: 'cmd/all/help_beta/command',  value: cmd get_config_text --list help/contact_link_commercial help/beta  }
+    - { mode: set, path: 'cmd/all/help_admin/command', value: cmd get_config_text --list help/contact_link_commercial help/admin }
+    

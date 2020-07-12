@@ -1,0 +1,7 @@
+# SALO
+
+database_name:   COMMERCIALBOTS
+bot_name:        commercial9
+bot_name_public: Бриброл
+
+#include ../../commercial_main.yaml#

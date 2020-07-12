@@ -1,0 +1,31 @@
+
+# ANIMEBOT
+
+database_name:   SALODATABASE
+bot_name:        commercial1
+bot_name_public: Бот
+
+individual_config_path: resources/config/individual_basic_user_info.yaml
+
+### NOT USED
+# include ../../main.yaml#
+# include ../../help.yaml#
+# include ../../big_letters.yaml#
+# include ../../cmd.yaml#
+# include ../../game.yaml#
+# include ../../generator.yaml#
+# include ../../image.yaml#
+
+### ACTIVE
+#include help.yaml#
+#include cmd.yaml#
+#include image.yaml#
+#include possibility.yaml#
+#include ../../answer.yaml#
+#include ../../coeff.yaml#
+#include ../../error.yaml#
+#include ../../group.yaml#
+#include ../../keyword.yaml#
+#include ../../regex.yaml#
+#include ../../media.yaml#
+

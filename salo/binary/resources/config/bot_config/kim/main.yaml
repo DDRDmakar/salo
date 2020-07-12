@@ -1,0 +1,7 @@
+# SALO
+
+database_name:   SALODATABASE
+bot_name:        kim
+bot_name_public: кореец
+
+#include ../../main.yaml#

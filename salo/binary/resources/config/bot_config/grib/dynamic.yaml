@@ -1,0 +1,19 @@
+high_scores:
+  max_n_messages:
+    n_messages: 12771
+    id: grib_networking_vkgroup_137004233
+    name: Мария Галиева
+  game_guess_word:
+    wins: 188
+    loses: 20
+    id: grib_networking_vkgroup_306826666
+    name: Денис Крук
+  game_word_chain:
+    high_score: 241
+    id: grib_networking_vkgroup_306826666
+    name: Денис Крук
+  teachmode:
+    max_teachmessages:
+      n_messages: 542
+      id: grib_networking_vkgroup_422898079
+      name: Динара Вайс

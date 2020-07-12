@@ -1,0 +1,56 @@
+image: &ref_help
+    "SaloIntellect (с) \n\
+    by muxamed666 and DDRDmakar \n\
+    ================================ \n\
+    СПРАВКА ПО РЕДАКТОРУ ИЗОБРАЖЕНИЙ \n\
+    К соообщению прикладывайте картинку для обработки. \n\
+    Команды редактора начинаются с плюса! \n\
+    Текст, который должен быть на картинке, заключать в кавычки обязательно.\n\
+    Команда и картинка должны находиться в одном сообщении!!! \n\
+    ================================ \n\
+    +мем \"текст сверху\" \"текст снизу\" - создать мем\n\
+    +шакал - сжать фото \n\
+    +напиши \"текст\" - написать текст на картинке \n\
+    +демотиватор \"текст\" - создать демотиватор \n\
+    +фап - \"пофапать\" на фото \n\
+    +важно - мем, где парень пялится в монитор \n\
+    +sad - безысходность \n\
+    +лгбт - наложение ЛГБТ флага \n\
+    +вьетнам - вьетнамский флешбек \n\
+    +контраст - повышение контраста \n\
+    +лицо - приближение лица (gif) \n\
+    +шейкер - ушатать картинку (gif) \n\
+    Отразить картинку: \n\
+    +кек \n\
+    +кек лево - слева направо \n\
+    +кек право - справа налево \n\
+    +кек верх - сверху вниз \n\
+    +кек низ - снизу вверх \n\
+    ================================ \n\
+    Примеры использования бота на стене группы. \n\
+    Советую ознакомиться. \n\
+    "
+
+additions:
+    - { mode: insert, path: fetcher_keyword, value: bot }
+    - { mode: insert, path: fetcher_keyword, value: бот }
+    
+    - { mode: insert, path: primary_keyword, value: bot }
+    - { mode: insert, path: primary_keyword, value: бот }
+    
+    - { mode: set, path: cmd/all/help_main/command, value: cmd get_config_text help/image }
+    - { mode: set, path: default_message, value: 'Команда не распознана. Чтобы узнать, что я умею, напиши "помощь".' }
+    - { mode: set, path: available/throw_default_message, value: true }
+    
+    - { mode: set, path: available/history, value: false }
+    - { mode: set, path: available/chat, value: false }
+    - { mode: set, path: available/attachment, value: false }
+    - { mode: set, path: available/search_answer_in_history, value: false }
+    - { mode: set, path: available/answer_empty_message, value: false }
+    - { mode: set, path: available/teach, value: false }
+    - { mode: set, path: available/game, value: false }
+    - { mode: set, path: available/save_unsolved, value: false }
+    
+    - { mode: set, path: media_text/help/image, value: *ref_help }
+    
+    - { mode: set, path: cmd/all/kek/command, value: cmd image -preset flip2 }

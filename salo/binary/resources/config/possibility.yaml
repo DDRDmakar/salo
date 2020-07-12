@@ -1,0 +1,81 @@
+### AVAILABILITY
+
+# Разрешение на использование различных комбинаций для поиска ответа в базе
+### 0 - nowhere , 1 - before type_checking , 2 - after type_checking
+available_search_sentence: 0 # По предложениям
+available_search_group_4:  0 # По четвёркам слов (произвольный порядок)
+available_search_triple:   1 # По тройкам слов
+available_search_group_3:  1 # По тройкам слов (произвольный порядок)
+available_search_double:   2 # По двойкам слов
+available_search_group_2:  2 # По двойкам слов (произвольный порядок)
+available_search_single:   2 # По одному слову
+available_search_group_1:  0 # По одному слову (произвольный порядок)
+available_search_zero:     2 # Ответ - отговорка, если ничего не нашлось.
+
+# Включение или отключение тех или иных модулей
+available:
+    cmd:     true # Обработка команд
+    chat:    true # Ответы в стиле живого общения
+    history: true # Запоминание истории сообщений
+    ignore:  true # Использование игнор-листа
+    attachment: true # Обработка вложений
+    react_to_attachment_with_text: false # Воспринимается ли вложение с текстом как вложение, а не как сообщение
+    search_answer_in_history:      true # Поиск готовых ответов в истории
+    answer_empty_message:          true # Отвечать ли на пустые сообщения
+    teach:   true # Режим обучения
+    game:    true # Игровой режим
+    save_unsolved: true # Сохранение нераспознанных фраз для дальнейшег ообучения
+    throw_default_message: false # Отправка пользователю стандартного сообщения в случае неудачи поиска ответа
+    answer_cmd_image: false # Отвечать ли из конвеера на команду cmd image
+    recover_users:    true  # Возвращать ли пользователей из резервной базы
+    use_global_attachments: true # Использовать ли вложения, предназначенные для всех ботов
+    ignore_punctuation_after_command: true # Игнорировать пунктуационные символы в конце при распознавании команд
+    
+# Текст стандартного сообщения
+default_message: ''
+
+available_person_gender_checking: true  # Проверка пола при ответе на вопрос "кто"
+available_clear_history:          false # Может ли бот удалять старую историю
+available_description:            true  # Использование википедии в ответах
+available_ban:                    true  # Использование бан-листа и баненье пользователей
+available_delete_short_words:     true  # Удаление коротких слов при обработке сообщений
+available_teachmode_auto_approve: false # Добавление новых фраз из обучения в ходовую базу без проверки
+available_bot_signature_group:    true  # Добавление в начало сообщения префикса (для интерфейса группы)
+available_text_to_speech:         true  # Использование синтезатора речи
+available_repeat_name:            true  # Повторяющиеся имена пользователей
+
+interfaces_are_multiple: false
+
+### POSSIBILITY
+# t - true, f - false
+# Вероятность, что:
+poss_single_word_wiki: { t: 1, f: 11 } # Одиночное не короткое слово бот будетискать на википедии
+poss_repeat_control:   { t: 1, f: 4 }  # Бот ругается, если пользователь повторился
+poss_time_from_db:     { t: 1, f: 2 }  # На вопрос "когда" бот отвечает готовой фразой из базы
+
+# Часть записей в плоской адресации, а часть в древовидной.
+# Издержки старого формата кода
+possibility: {
+}
+# Вероятности определения того или иного типа сообщения при
+# наличии необходимых признаков
+poss_repeat:   { t: 1, f: 0 } # Повторяющееся сообщение
+poss_poss:     { t: 1, f: 0 } # Вероятность
+poss_choice:   { t: 1, f: 0 } # Выбор из нескольких вариантов
+poss_number:   { t: 1, f: 0 } # Число
+poss_mathe:    { t: 1, f: 0 } # Математический пример
+poss_reason:   { t: 1, f: 0 } # Причина
+poss_person:   { t: 1, f: 0 } # Кто-то
+poss_count:    { t: 1, f: 0 } # Количество
+poss_time:     { t: 1, f: 0 } # Время
+poss_location: { t: 1, f: 0 } # Место
+poss_solution: { t: 1, f: 1 } # Совет
+poss_boolean:  { t: 9, f: 2 } # Булевый ответ
+poss_smile:    { t: 1, f: 0 } # Смайл
+poss_wiki:     { t: 1, f: 0 } # Поиск по википедии
+poss_evaluate: { t: 1, f: 0 } # Оценка
+
+###   Ответ, если сообщение не распознано
+poss_zero_smile:  1 ###   Смайл
+poss_zero_answer: 1 ###   Ответ-отговорка
+poss_zero_theme:  3 ###   Предыдущая тема

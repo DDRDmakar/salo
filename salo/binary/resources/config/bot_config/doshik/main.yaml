@@ -1,0 +1,7 @@
+# SALO
+
+database_name:   SALODATABASE
+bot_name:        doshik
+bot_name_public: Доширак
+
+#include ../../main.yaml#

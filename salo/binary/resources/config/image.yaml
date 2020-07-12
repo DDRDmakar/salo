@@ -1,0 +1,238 @@
+### IMAGE
+
+# Пресеты к редактору картинок "Krapiva"
+
+# Параметры пресетов, которые содержат только один фильтр, можно изменять при вызове команды
+# бота "cmd image" в виде дополнительных параметров.
+# Например: "cmd image -preset flip -hor right", где "flip" - имя пресета, который бот читает из этого файла,
+# а "right" - значение параметра "hor" в этом фильтре, который мы изменяем из командной строки.
+# Изменяемых параметров может быть несколько.
+
+# Значения параметров, имена которых начинаются с нижнего подчёркивания "_", не могут
+# быть изменены из командной строки.
+
+# Список пресетов для редактора
+image_preset:
+    # Текст белыми буквами на чёрном фоне, ориентированный по центру
+    pixeled:
+        mainfilter: 0
+        filters:
+            - annotate:
+                _filename_out: output.png
+                text: "<test>"
+                max_line_length: 45
+                max_lines_count: 14
+                _width: 1080
+                _height: 720
+                color_text: white
+                color_background: black
+                _font: /home/montekekler/engine/krapiva/resources/font1.ttf
+                font_size: 35
+                
+    # Отражение половины изображения
+    flip:
+        filters:
+            - flip:
+                _filename_in: input.jpg
+                _filename_out: output.png
+                ver: no
+                hor: no
+    # # # В обе стороны
+    flip2:
+        filters:
+            - flip:
+                _filename_in: input.jpg
+                _filename_out: output.png
+                ver: no
+                hor: left
+            - flip:
+                _filename_in: input.jpg
+                _filename_out: output2.png
+                ver: no
+                hor: right
+                
+    # Ухудшает качество изображения
+    shakal:
+        filters:
+            - shakal:
+                _filename_in: input.jpg
+                _filename_out: output.png
+                _size: 500
+                quality: 10
+                
+    # Генерирует демотиватор из данных картинки и текста
+    demotivator:
+        filters:
+            - demotivator:
+                _filename_in: input.jpg
+                _filename_out: output.png
+                text: "<test>"
+                border_size: 0.1
+                text_area_height: 0.5
+                
+    # Генерирует мем "Спасибо, я кончил"
+    koncha:
+        filters:
+            - spasibo_konchil:
+                _filename_in: input.jpg
+                _filename_out: output.png
+                
+    # Генерирует мем, где чувак смотрит в монитор,
+    # а сзади сидит девушка без трусов
+    tnn:
+        filters:
+            - tnn:
+                _filename_in: input.jpg
+                _filename_out: output.png
+                
+    # Делает надписи на картинке с верхенго и нижнего края
+    meme:
+        filters:
+            - meme:
+                text_1: ''
+                text_2: ''
+                _filename_in: input.jpg
+                _filename_out: output.png
+                max_line_length: 33
+                max_lines_count: 4
+                _width: 1080
+                _font: resources/IMPACT.ttf
+                font_size: 60
+                font_stroke_width: 2
+                color_text: white
+                color_stroke: black
+                
+    # Делает картинку чёрно-белой и безысходной
+    sad:
+        1:
+            filters:
+                - transparent_merge:
+                    _filename_in: input.jpg
+                    _filename_out: output.png
+                    _filename_theme: resources/melancholy/melancholy_1.jpg
+                    transparency: 0.65
+                    grayscale: yes
+        2:
+            filters:
+                - transparent_merge:
+                    _filename_in: input.jpg
+                    _filename_out: output.png
+                    _filename_theme: resources/melancholy/melancholy_2.jpg
+                    transparency: 0.65
+                    grayscale: yes
+        3:
+            filters:
+                - transparent_merge:
+                    _filename_in: input.jpg
+                    _filename_out: output.png
+                    _filename_theme: resources/melancholy/melancholy_3.jpg
+                    transparency: 0.65
+                    grayscale: yes
+        4:
+            filters:
+                - transparent_merge:
+                    _filename_in: input.jpg
+                    _filename_out: output.png
+                    _filename_theme: resources/melancholy/melancholy_4.jpg
+                    transparency: 0.65
+                    grayscale: yes
+        5:
+            filters:
+                - transparent_merge:
+                    _filename_in: input.jpg
+                    _filename_out: output.png
+                    _filename_theme: resources/melancholy/melancholy_5.jpg
+                    transparency: 0.65
+                    grayscale: yes
+        6:
+            filters:
+                - transparent_merge:
+                    _filename_in: input.jpg
+                    _filename_out: output.png
+                    _filename_theme: resources/melancholy/melancholy_6.jpg
+                    transparency: 0.65
+                    grayscale: yes
+        7:
+            filters:
+                - transparent_merge:
+                    _filename_in: input.jpg
+                    _filename_out: output.png
+                    _filename_theme: resources/melancholy/melancholy_7.jpg
+                    transparency: 0.65
+                    grayscale: yes
+        8:
+            filters:
+                - transparent_merge:
+                    _filename_in: input.jpg
+                    _filename_out: output.png
+                    _filename_theme: resources/melancholy/melancholy_8.jpg
+                    transparency: 0.65
+                    grayscale: yes
+    
+    # Наложение флага ЛГБТ
+    lgbt:
+        filters:
+            - transparent_merge:
+                _filename_in: input.jpg
+                _filename_out: output.png
+                _filename_theme: resources/transparent_merge/LGBT.png
+                transparency: 0.7
+                grayscale: no
+    
+    # Контраст
+    contrast:
+        filters:
+            - sigmoidal_contrast:
+                _filename_in: input.jpg
+                _filename_out: output.png
+                contrast: 50
+                grayscale: no
+    # Вьетнамский флешбек
+    vietnam:
+        1:
+            filters:
+                - transparent_merge:
+                    _filename_in: input.jpg
+                    _filename_out: output.png
+                    _filename_theme: resources/transparent_merge/Vietnam_flashback/1.jpg
+                    transparency: 0.65
+                    grayscale: yes
+        2:
+            filters:
+                - transparent_merge:
+                    _filename_in: input.jpg
+                    _filename_out: output.png
+                    _filename_theme: resources/transparent_merge/Vietnam_flashback/2.jpg
+                    transparency: 0.65
+                    grayscale: yes
+        3:
+            filters:
+                - transparent_merge:
+                    _filename_in: input.jpg
+                    _filename_out: output.png
+                    _filename_theme: resources/transparent_merge/Vietnam_flashback/3.jpg
+                    transparency: 0.65
+                    grayscale: yes
+    # Приближение лица
+    faceshake:
+        filters:
+            - faceshake:
+                _filename_in: input.jpg
+                _filename_out: output.gif
+                _frames_count: 50
+                _animation_delay: 15
+                _animation_delay_last: 500
+                _max_size: 360
+                shake: no
+                shake_coeff: 0.04
+    # Тряска картинки
+    shake:
+        filters:
+            - shake:
+                _filename_in: input.jpg
+                _filename_out: output.gif
+                _frames_count: 10
+                _animation_delay: 3
+                _max_size: 144
+                shake_coeff: 0.04
+    

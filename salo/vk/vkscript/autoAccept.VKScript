@@ -1,0 +1,104 @@
+/*
+*
+*  Copyright ©, 2015-2020. All Rights Reserved.
+*
+*    Autors:
+*    Motylenok Mikhail
+*    Makarevich Nikita
+*
+*    This code is privately owned and is a commercial secret. We do not provide
+*    code to anyone without the written agreement. Copying, publication, use
+*    for commercial or non-commercial purposes without the consent
+*    of the authors is a violation of applicable law.
+*
+*/
+
+API.account.setOnline({"voip":0});
+
+var fr_list = API.friends.getRequests({"count":1, "extended":0, 
+"need_mutual":0, "out":0, "need_viewed":1}); 
+
+var fr_list_out = API.friends.getRequests({"count":1, "extended":0, 
+"need_mutual":0, "out":1}); 
+
+if(fr_list_out.count != 0)
+{
+    var tobedel = fr_list_out.items[0];
+    API.friends.delete({"user_id":tobedel});
+}
+
+
+var ALLFR = API.friends.get({"order":"hints"});
+var res2;
+var bannedid = -1;
+
+if(ALLFR.count == 10000)
+{
+    var kok = ALLFR.items[999];
+    var res = API.friends.delete({"user_id":kok});
+    
+    if(res.friend_deleted == 1)
+    {
+        res2 = API.friends.delete({"user_id":kok});
+        
+        if(res2.success == 1 && res2.in_request_deleted == 1)
+        {
+            //return res2;
+            API.account.banUser({"user_id":kok});
+            bannedid = kok;
+            return ({ "toBeUnblocked": bannedid });
+        }
+    }
+}
+
+
+if(fr_list.count != 0)
+{
+    var userid = fr_list.items[0];
+    
+    var usr1 = API.users.get({"user_id":userid});  
+    var mres = usr1@.deactivated;
+    
+    if(mres.length > 0)
+    {
+        if(mres[0] == "banned")
+        {
+            API.account.banUser({"user_id":userid});
+            return "banned";
+        }
+        
+        if(mres[0] == "deleted")
+        {
+            API.account.banUser({"user_id":userid});
+            return ({ "toBeUnblocked": userid });
+        }
+    }
+    
+    //return userid;
+    
+    var res3 = API.friends.add({"user_id":userid});
+ 
+    //return res3.error;
+
+    if(res3 == 2)
+    {
+        if(bannedid != -1)
+        {
+            return ({
+              "accepted": userid,
+              "toBeUnblocked": bannedid
+            });
+        }
+        else
+        {
+            return userid;
+        }
+    }
+    else
+    {
+        return "error";
+    }
+    
+}
+
+return "nofriends";

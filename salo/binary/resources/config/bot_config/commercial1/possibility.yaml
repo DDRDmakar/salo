@@ -1,0 +1,70 @@
+### AVAILABILITY
+
+### 0 - nowhere , 1 - before type_checking , 2 - after type_checking
+available_search_sentence: 0
+available_search_group_4:  0
+available_search_triple:   0
+available_search_group_3:  0
+available_search_double:   0
+available_search_group_2:  0
+available_search_single:   0
+available_search_group_1:  0
+available_search_zero:     0
+
+available:
+    cmd:     true
+    chat:    false # Ответы в стиле живого общения
+    history: true
+    ignore:  true
+    attachment: false
+    react_to_attachment_with_text: false
+    search_answer_in_history:      false
+    answer_empty_message:          true
+    teach:   false
+    game:    false
+    save_unsolved: false
+    throw_default_message: true
+
+default_message:
+"Для преобразования текста в картинку, нужно написать: \n\
+Напиши \"Ваш текст\" \n\
+____________________________ \n\
+Пример: Напиши \"привет\" \n\
+"
+
+available_person_gender_checking: false
+available_clear_history:          false
+available_description:            false
+available_ban:                    true
+available_delete_short_words:     false
+available_teachmode_auto_approve: false
+available_bot_signature_group:    false
+available_text_to_speech:         false
+available_repeat_name:            true # Повторяющиеся имена пользователей
+
+### POSSIBILITY
+poss_single_word_wiki: { t: 1, f: 11 }
+poss_repeat_control:   { t: 1, f: 4 }
+poss_time_from_db:     { t: 1, f: 2 }
+
+possibility: {
+}
+poss_repeat:   { t: 0, f: 0 }
+poss_poss:     { t: 0, f: 0 }
+poss_choice:   { t: 0, f: 0 }
+poss_number:   { t: 0, f: 0 }
+poss_mathe:    { t: 0, f: 0 }
+poss_reason:   { t: 0, f: 0 }
+poss_person:   { t: 0, f: 0 }
+poss_count:    { t: 0, f: 0 }
+poss_time:     { t: 0, f: 0 }
+poss_location: { t: 0, f: 0 }
+poss_solution: { t: 0, f: 0 }
+poss_boolean:  { t: 0, f: 0 }
+poss_smile:    { t: 0, f: 0 }
+poss_wiki:     { t: 0, f: 0 }
+poss_evaluate: { t: 0, f: 0 }
+
+poss_zero_smile:  1 ###   Ответ, если сообщение не распознано
+poss_zero_answer: 1 ###   Ответ-отговорка
+poss_zero_theme:  3 ###   Предыдущая тема

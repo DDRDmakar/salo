@@ -1,0 +1,53 @@
+
+### Command rights
+# Defaults:
+#     console - false
+#     stable - true and false
+#     rights - any
+#     noreply - false
+
+cmd_rights: {
+    # CONSOLE
+    statistics:  { console: true, stable: true, rights: [0,1] },
+    st:          { console: true },
+    botstats:    { console: true },
+
+    # CONVEER
+    me:       { stable: true },
+    get:      { stable: true },
+    help:     {},
+    id:       {},
+    image:    { noreply: true }
+}
+
+### COMMANDS ----------------------------------------------------------
+
+cmd: {
+    ### All interfaces
+    all: {},
+    
+    ### VK
+    networking_vkcom: &ref_cmd_vk {
+        
+        pword_pcommand: {
+            # cmd image -preset pixeled -text "hello world"
+            cmd image -preset pixeled -text: [напиши, напеши, напишы, напешы,
+                картинка, картинку, картинки, фото, фотка, фотку, мем, мемес, мемас, мемасы, изображение,
+                кинь картинку, кинь картинки, кинь фото, кинь фотку, кинь мем, кинь мемес, кинь мемас, кинь изображение,
+                скинь картинку, скинь картинки, скинь фото, скинь фотку, скинь мем, скинь мемес, скинь мемас, скинь изображение,
+                покажи картинку, покажи картинки, покажи фото, покажи фотку, покажи мем, покажи мемес, покажи мемас, покажи изображение,
+                отправь картинку, отправь картинки, отправь фото, отправь фотку, отправь мем, отправь мемес, отправь мемас, отправь изображение,
+                картинку, картинки, фото, фотку, мем, мемес, мемас, изображение,
+                get photo, get picture, отправь, скинь свое фото,
+                мемас скинь, ну скинь если можно, поделись картинкой, поделись картинками, отошли мне картинку, ещё картинку, еще картинку, демотиватор
+            ]
+        }
+    },
+    
+    ### VKgroup ( the same as VK )
+    networking_vkgroup: *ref_cmd_vk,
+    
+    networking_telegram: {},
+    
+    webfrontend: {}
+}

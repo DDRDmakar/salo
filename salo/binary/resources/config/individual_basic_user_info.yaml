@@ -1,0 +1,41 @@
+###################################
+#   SALO user individual config
+###################################
+
+id:    no_id
+first: no_name
+last:  no_surname
+name:  no_nikname
+
+n_messages: '0'
+
+n_teachmessages: '0'
+
+active_first:  2000-01-01T00:00:00.0Z
+active_last:   2000-01-01T00:00:00.0Z
+
+ban:
+    banned: false
+    times_banned: 0
+    reasons: []
+
+last_theme: no_theme
+
+# Salo Conditional Value
+# Условные единицы валюты
+SCV: '0'
+
+# User status:
+# 0 - creator
+# 1 - admin
+# 2 - user
+user_status: 2
+
+teachmode: false
+
+game:
+    gamemode: 0
+
+# Individual settings
+leet_type: 0
+rude_filter: false

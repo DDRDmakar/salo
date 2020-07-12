@@ -1,0 +1,141 @@
+\lstset{
+  literate={а}{{\selectfont\char224}}1
+           {б}{{\selectfont\char225}}1
+           {в}{{\selectfont\char226}}1
+           {г}{{\selectfont\char227}}1
+           {д}{{\selectfont\char228}}1
+           {е}{{\selectfont\char229}}1
+           {ё}{{\"e}}1
+           {ж}{{\selectfont\char230}}1
+           {з}{{\selectfont\char231}}1
+           {и}{{\selectfont\char232}}1
+           {й}{{\selectfont\char233}}1
+           {к}{{\selectfont\char234}}1
+           {л}{{\selectfont\char235}}1
+           {м}{{\selectfont\char236}}1
+           {н}{{\selectfont\char237}}1
+           {о}{{\selectfont\char238}}1
+           {п}{{\selectfont\char239}}1
+           {р}{{\selectfont\char240}}1
+           {с}{{\selectfont\char241}}1
+           {т}{{\selectfont\char242}}1
+           {у}{{\selectfont\char243}}1
+           {ф}{{\selectfont\char244}}1
+           {х}{{\selectfont\char245}}1
+           {ц}{{\selectfont\char246}}1
+           {ч}{{\selectfont\char247}}1
+           {ш}{{\selectfont\char248}}1
+           {щ}{{\selectfont\char249}}1
+           {ъ}{{\selectfont\char250}}1
+           {ы}{{\selectfont\char251}}1
+           {ь}{{\selectfont\char252}}1
+           {э}{{\selectfont\char253}}1
+           {ю}{{\selectfont\char254}}1
+           {я}{{\selectfont\char255}}1
+           {А}{{\selectfont\char192}}1
+           {Б}{{\selectfont\char193}}1
+           {В}{{\selectfont\char194}}1
+           {Г}{{\selectfont\char195}}1
+           {Д}{{\selectfont\char196}}1
+           {Е}{{\selectfont\char197}}1
+           {Ё}{{\"E}}1
+           {Ж}{{\selectfont\char198}}1
+           {З}{{\selectfont\char199}}1
+           {И}{{\selectfont\char200}}1
+           {Й}{{\selectfont\char201}}1
+           {К}{{\selectfont\char202}}1
+           {Л}{{\selectfont\char203}}1
+           {М}{{\selectfont\char204}}1
+           {Н}{{\selectfont\char205}}1
+           {О}{{\selectfont\char206}}1
+           {П}{{\selectfont\char207}}1
+           {Р}{{\selectfont\char208}}1
+           {С}{{\selectfont\char209}}1
+           {Т}{{\selectfont\char210}}1
+           {У}{{\selectfont\char211}}1
+           {Ф}{{\selectfont\char212}}1
+           {Х}{{\selectfont\char213}}1
+           {Ц}{{\selectfont\char214}}1
+           {Ч}{{\selectfont\char215}}1
+           {Ш}{{\selectfont\char216}}1
+           {Щ}{{\selectfont\char217}}1
+           {Ъ}{{\selectfont\char218}}1
+           {Ы}{{\selectfont\char219}}1
+           {Ь}{{\selectfont\char220}}1
+           {Э}{{\selectfont\char221}}1
+           {Ю}{{\selectfont\char222}}1
+           {Я}{{\selectfont\char223}}1
+}
+
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+% dots in tableofcontents
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+
+\lstset{ 
+  backgroundcolor=\color{white},      % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}; should come as last argument
+  basicstyle=\footnotesize\ttfamily,  % the size of the fonts that are used for the code
+  breakatwhitespace=false,            % sets if automatic breaks should only happen at whitespace
+  breaklines=true,                    % sets automatic line breaking
+  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{mygreen},    % comment style
+  deletekeywords={...},            % if you want to delete keywords from the given language
+  escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+  frame=single,	                   % adds a frame around the code
+  keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+  keywordstyle=\color{blue},       % keyword style
+  language=Octave,                 % the language of the code
+  morekeywords={*,...},            % if you want to add more keywords to the set
+  numbers=left,                    % where to put the line-numbers; possible values are (none, left, right)
+  numbersep=5pt,                   % how far the line-numbers are from the code
+  numberstyle=\tiny\color{mygray}, % the style that is used for the line-numbers
+  rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+  showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+  showstringspaces=false,          % underline spaces within strings only
+  showtabs=false,                  % show tabs within strings adding particular underscores
+  stepnumber=2,                    % the step between two line-numbers. If it's 1, each line will be numbered
+  stringstyle=\color{mymauve},     % string literal style
+  tabsize=2,	                   % sets default tabsize to 2 spaces
+  title=\lstname                   % show the filename of files included with \lstinputlisting; also try caption instead of title
+}
+
+\newcommand\YAMLcolonstyle{\color{red}\mdseries}
+\newcommand\YAMLkeystyle{\color{black}\bfseries}
+\newcommand\YAMLvaluestyle{\color{blue}\mdseries}
+
+\makeatletter
+
+% here is a macro expanding to the name of the language
+% (handy if you decide to change it further down the road)
+\newcommand\language@yaml{yaml}
+
+\expandafter\expandafter\expandafter\lstdefinelanguage
+\expandafter{\language@yaml}
+{
+  keywords={true,false,null,y,n},
+  keywordstyle=\color{darkgray}\bfseries,
+  basicstyle=\YAMLkeystyle,                                 % assuming a key comes first
+  sensitive=false,
+  comment=[l]{\#},
+  morecomment=[s]{/*}{*/},
+  commentstyle=\color{purple}\ttfamily,
+  stringstyle=\YAMLvaluestyle\ttfamily,
+  moredelim=[l][\color{orange}]{\&},
+  moredelim=[l][\color{magenta}]{*},
+  moredelim=**[il][\YAMLcolonstyle{:}\YAMLvaluestyle]{:},   % switch to value style at :
+  morestring=[b]',
+  morestring=[b]",
+  literate =    {---}{{\ProcessThreeDashes}}3
+                {>}{{\textcolor{red}\textgreater}}1     
+                {|}{{\textcolor{red}\textbar}}1 
+                {\ -\ }{{\mdseries\ -\ }}3,
+}
+
+% switch to key style at EOL
+\lst@AddToHook{EveryLine}{\ifx\lst@language\language@yaml\YAMLkeystyle\fi}
+\makeatother
+
+\newcommand\ProcessThreeDashes{\llap{\color{cyan}\mdseries-{-}-}}

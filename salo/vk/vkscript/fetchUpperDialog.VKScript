@@ -1,0 +1,84 @@
+/*
+*
+*  Copyright ©, 2015-2020. All Rights Reserved.
+*
+*    Autors:
+*    Motylenok Mikhail
+*    Makarevich Nikita
+*
+*    This code is privately owned and is a commercial secret. We do not provide
+*    code to anyone without the written agreement. Copying, publication, use
+*    for commercial or non-commercial purposes without the consent
+*    of the authors is a violation of applicable law.
+*
+*/
+
+//get upper dialog
+var msg = 
+API.messages.getDialogs({"count":1, "preview_length":0, "unread":1});
+
+//return if no new msg
+if(msg.count == 0)
+    {
+        return("nomsg");
+    }
+    
+var msg0 = msg.items[0].message;
+var atch = msg0.attachments[0].type;
+
+if(atch == null)
+{
+    if(msg0.fwd_messages[0] != null)
+    {
+        atch = "fwd_messages";        
+    }
+    else
+    {
+        atch = "null";
+    }
+    
+}
+
+if(!msg0.chat_id)
+    {
+        //mark as readed
+        API.messages.markAsRead({"peer_id":msg0.user_id});
+        //Set up writing status
+        API.messages.setActivity({"user_id":msg0.user_id, "type":"typing"});
+    }
+    else
+    {
+        var peer = 2000000000 + msg0.chat_id;
+        
+        //mark as readed
+        API.messages.markAsRead({"peer_id": peer});
+        
+        //greeting check
+        var greet = msg0.body.substr(0, 8);
+        var greet2 = msg0.body.substr(0, 4);
+        
+        if(greet != "Сало" && greet != "сало" && greet != "САЛО" 
+            && greet2 != "Salo" && greet2 != "SALO" && greet2 != "salo")
+        {
+            return("nomsg");
+        }
+       
+        //Set up writing status
+        var peer = 2000000000 + msg0.chat_id;
+        API.messages.setActivity({"peer_id":peer, "type":"typing"});
+    }
+
+
+
+//get user data
+var user = API.users.get({"user_ids":msg0.user_id})[0];
+
+//return data
+return({"msgtxt":msg0.body, 
+    "user_id":msg0.user_id, 
+    "name":user.first_name,
+    "last":user.last_name,
+    "chat_id": msg0.chat_id,
+    "attch": atch,
+    "status": "ALL_OK"
+});

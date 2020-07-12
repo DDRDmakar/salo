@@ -1,0 +1,7 @@
+# SALO
+
+database_name:   GRIBDATABASE
+bot_name:        grib
+bot_name_public: Чайный Гриб
+
+#include ../../main.yaml#

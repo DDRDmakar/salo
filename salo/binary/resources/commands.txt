@@ -1,0 +1,31 @@
+
+List of availible commands are:
+
+help - display this command list 
+exit - close the SALO Server
+forcequit - kill SALO Server process immidiately. Unsafe, use only if server not respounding.
+st - display status of the server
+loadstatus - display stress status of the server
+statistics - display statistics of the server
+msgstats - display statistics of messages
+botstats - bot's messages statistics
+networkdbg - on/off network debugging mode
+vkrelogin - restart vk session
+timings - show session uptime and time before session restart
+cmd changeuserstatus <id> <status> - change user status ( in vk )
+reloadcfg - refresh config info (synonym: "snapshot convreloadcfg")
+unsolveddeleteall - clear unsolved phrases list
+unsolvedapproveall - approve all new saved phrases
+unsolvedapprove - approve each phrase individually
+	1 - save
+	0 - delete
+	fin - finish approving
+ecmaecho - check connection with ECMA (vk)
+logsecho - check logs module state
+fulltimings - check full message turnover time
+conveerdbg - on/off conveer debug mode
+idlebreaker - on/off idlebreaking mode
+translator - on/off translator module
+cooldown - on/off 
+snapshot [SNAPSHOT COMMAND] - snapshot commads
+Run "snapshot help" to learn more about snapshots.

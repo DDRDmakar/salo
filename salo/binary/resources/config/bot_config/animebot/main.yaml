@@ -1,0 +1,27 @@
+
+# ANIMEBOT
+
+database_name:   ANIMEBOT
+bot_name:        animebot
+bot_name_public: Аниме Бот
+
+individual_config_path: resources/config/individual_basic_user_info.yaml
+
+### DEPRECATED
+# include ../../main.yaml#
+# include ../../help.yaml#
+
+### ACTIVE
+#include help.yaml#
+#include ../../answer.yaml#
+#include ../../big_letters.yaml#
+#include ../../cmd.yaml#
+#include ../../coeff.yaml#
+#include ../../error.yaml#
+#include ../../game.yaml#
+#include ../../generator.yaml#
+#include ../../group.yaml#
+#include ../../keyword.yaml#
+#include ../../possibility.yaml#
+#include ../../regex.yaml#
+

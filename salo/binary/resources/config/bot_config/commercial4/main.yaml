@@ -1,0 +1,7 @@
+# SALO
+
+database_name:   COMMERCIALBOTS
+bot_name:        commercial4
+bot_name_public: Шамиль
+
+#include ../../commercial_main.yaml#

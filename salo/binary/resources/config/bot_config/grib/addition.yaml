@@ -1,0 +1,26 @@
+
+additions:
+    - { mode: insert, path: fetcher_keyword, value: гриб }
+    - { mode: insert, path: fetcher_keyword, value: grib }
+    - { mode: insert, path: fetcher_keyword, value: чай }
+    
+    - { mode: insert, path: primary_keyword, value: гриб }
+    - { mode: insert, path: primary_keyword, value: grib }
+    - { mode: insert, path: primary_keyword, value: чай }
+    - { mode: insert, path: primary_keyword, value: чайный }
+    - { mode: insert, path: primary_keyword, value: грибок }
+    - { mode: insert, path: primary_keyword, value: грибочек }
+    - { mode: insert, path: primary_keyword, value: чайный гриб }
+    - { mode: insert, path: primary_keyword, value: гриб чайный }
+    - { mode: insert, path: primary_keyword, value: чайныйгриб }
+
+    # Allow open teaching
+    - { mode: set, path: available_teachmode_auto_approve, value: true }
+    - { mode: insert, path: cmd_rights/db/rights, value: 2 }
+    
+    # Enable database editing commands
+    - { mode: set, path: cmd/all/db_add/active,    value: yes }
+    - { mode: set, path: cmd/all/db_remove/active, value: yes }
+    
+    # Teachable bot help
+    - { mode: set, path: 'cmd/all/help_main/command', value: cmd get_config_text --list help/contact_link help/main_teachable }

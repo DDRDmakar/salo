@@ -1,0 +1,31 @@
+# HELP
+
+# help head
+help_contact_link:
+"Бот на платформе \"Сало Интеллект\". \n\
+SaloIntellect (с) \n\
+by muxamed666 and DDRDmakar \n\
+ \n\
+Об обнаруженных ошибках сообщай в нашу группу. \n\
+"
+
+# for usual users
+help_main:
+"Для преобразования текста в картинку, нужно написать: \n\
+Напиши \"Ваш текст\" \n\
+Текст писать в кавычках. \n\
+____________________________ \n\
+Пример: Напиши \"привет\" \n\
+"
+
+# for admins
+help_admin: no admin help here
+
+# additional help
+help_beta: no beta help here
+
+# help for teachers
+help_teacher: no teachmode help here
+
+# ban tips
+ban_help: no ban help here

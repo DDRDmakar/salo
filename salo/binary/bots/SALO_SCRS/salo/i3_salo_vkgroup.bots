@@ -1,0 +1,14 @@
+Salo 3 bot interface file
+Configuration strings here:
+'official'='1';
+'anticaptcha_enabled'='0';
+'anticaptcha_key'='';
+'alertdevelopers_here'='1';
+'vkgroup_numeric_id'='';
+'vkgroup_members_delay'='0';
+'vk_ignore_friends'='0';
+'vk_ignore_bdater'='0';
+'vk_confchats_only'='0';
+'custom_grouplink'='';
+'vkgroup_use_callbackapi'='1';
+'personal_promotion'='';

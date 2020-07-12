@@ -1,0 +1,16 @@
+additions:
+    - { mode: insert, path: fetcher_keyword, value: ким }
+    - { mode: insert, path: fetcher_keyword, value: kim }
+    - { mode: insert, path: fetcher_keyword, value: сокджин }
+    - { mode: insert, path: fetcher_keyword, value: сокчин }
+    - { mode: insert, path: fetcher_keyword, value: джин }
+    - { mode: insert, path: fetcher_keyword, value: кореец }
+    
+    - { mode: insert, path: primary_keyword, value: ким }
+    - { mode: insert, path: primary_keyword, value: kim }
+    - { mode: insert, path: primary_keyword, value: сокджин }
+    - { mode: insert, path: primary_keyword, value: сокчин }
+    - { mode: insert, path: primary_keyword, value: джин }
+    - { mode: insert, path: primary_keyword, value: кореец }
+    
+    - { mode: set, path: individual_config_path, value: resources/config/individual_basic_user_info_kim.yaml }

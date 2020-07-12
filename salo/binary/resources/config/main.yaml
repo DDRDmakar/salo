@@ -1,0 +1,35 @@
+###
+###
+###  Copyright ©, 2015-2020. All Rights Reserved.
+###
+###    Autors:
+###    Motylenok Mikhail
+###    Makarevich Nikita
+###
+###    This code is privately owned and is a commercial secret. We do not provide
+###    code to anyone without the written agreement. Copying, publication, use
+###    for commercial or non-commercial purposes without the consent
+###    of the authors is a violation of applicable law.
+###
+###
+
+### ROOT CONFIG FILE
+
+# ### ### ### ### ### ### ### ### ### ### ### ### ### ### ###
+
+individual_config_path: resources/config/individual_basic_user_info.yaml
+
+#include answer.yaml#
+#include big_letters.yaml#
+#include cmd.yaml#
+#include coeff.yaml#
+#include error.yaml#
+#include game.yaml#
+#include generator.yaml#
+#include group.yaml#
+#include help.yaml#
+#include keyword.yaml#
+#include possibility.yaml#
+#include regex.yaml#
+#include media.yaml#
+#include image.yaml#

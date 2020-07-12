@@ -1,0 +1,26 @@
+additions:
+    - { mode: insert, path: fetcher_keyword, value: шава }
+    - { mode: insert, path: fetcher_keyword, value: шавуха }
+    - { mode: insert, path: fetcher_keyword, value: шаверма }
+    - { mode: insert, path: fetcher_keyword, value: шаурма }
+    - { mode: insert, path: fetcher_keyword, value: shava }
+    - { mode: insert, path: fetcher_keyword, value: shavuha }
+    - { mode: insert, path: fetcher_keyword, value: shaverma }
+    - { mode: insert, path: fetcher_keyword, value: shaurma }
+    - { mode: insert, path: fetcher_keyword, value: питерская }
+    - { mode: insert, path: fetcher_keyword, value: еда }
+    
+    - { mode: insert, path: primary_keyword, value: шава }
+    - { mode: insert, path: primary_keyword, value: шавуха }
+    - { mode: insert, path: primary_keyword, value: шаверма }
+    - { mode: insert, path: primary_keyword, value: шаурма }
+    - { mode: insert, path: primary_keyword, value: shava }
+    - { mode: insert, path: primary_keyword, value: shavuha }
+    - { mode: insert, path: primary_keyword, value: shaverma }
+    - { mode: insert, path: primary_keyword, value: shaurma }
+    - { mode: insert, path: primary_keyword, value: питерская }
+    - { mode: insert, path: primary_keyword, value: еда }
+    - { mode: insert, path: primary_keyword, value: шавуха питерская }
+    - { mode: insert, path: primary_keyword, value: питерская шавуха }
+    - { mode: insert, path: primary_keyword, value: шавухапитерская }
+    - { mode: insert, path: primary_keyword, value: питерскаяшавуха }

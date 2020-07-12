@@ -1,0 +1,307 @@
+### Command rights
+# Defaults:
+#     console - в консоли эта команда исполняется или в конвеере (по умолчанию false (в конвеере))
+#     stable - Стабильный или не стабильный пользователь может исполнять эту команду (по умолчанию true и false (могут все))
+#     rights - Пользователям с каким статусом доступна эта команда (по умолчанию могут все)
+#     noreply - Нужно ли возвращать ответ на эту команду (по умолчанию нужно)
+
+# Права на исполнение команд
+cmd_rights: {
+    # CONSOLE
+    statistics:  { console: true, stable: true, rights: [0,1,3] },
+    loadstatus:  { console: true, stable: true, rights: [0,1,3] },
+    promotions:  { console: true, stable: true, rights: [0,1,3] },
+    speechfem:   { console: true, stable: true, noreply: true },
+    speechmal:   { console: true, stable: true, noreply: true },
+    repost:      { console: true, stable: true, rights: [0,1,3] },
+    pinrepost:   { console: true, stable: true, rights: [0,1,3] },
+    msgstats:    { console: true, stable: true },
+    st:          { console: true },
+    botstats:    { console: true },
+    weather:     { console: true },
+    speechgen:   { console: true },
+    line5:       { console: true, stable: true, rights: [0] },
+    oldsyncbans: { console: true, stable: true, rights: [0] },
+    syncbans:    { console: true, stable: true, rights: [0] },
+
+    # CONVEER
+    teachmode:         { stable: true, rights: [0,1,2,3] },
+    add_attachment:    { stable: true, rights: [0,1,3] },
+    remove_attachment: { stable: true, rights: [0,1,3] },
+    ban:               { stable: true, rights: [0,1,3] },
+    unban:             { stable: true, rights: [0,1,3] },
+    db:                { stable: true, rights: [0,1,3] },
+    changeuserstatus:  { stable: true, rights: [0] },
+    attachment_list:   { rights: [0,1,3] },
+    sponsor:           { rights: [0,1,3] },
+    me:                { stable: true },
+    get:               { stable: true },
+    get_config:        { stable: true, rights: [0] },
+    get_config_media:  {},
+    get_config_text:   {},
+    random:   {},
+    time:     {},
+    banme:    {},
+    random:   {},
+    write:    {},
+    say:      {},
+    callme:   {},
+    fetch:    {},
+    description: {},
+    fancytext:   {},
+    capsule:     {},
+    translit:    {},
+    play:        {},
+    changeleet:  {},
+    id:       {},
+    encode:  {},
+    image:    { console: false },
+    admin:    { stable: true, rights: [0,3] },
+    reset:    {}
+}
+
+### COMMANDS ----------------------------------------------------------
+
+# Преобразование команд с человеческого языка в формальный вид
+cmd: {
+    ### All interfaces
+    # Если команда не обозначена для какого-то конкретного интерфейса, то ищем здесь.
+    # Общие преобразования для всех интерфейсов
+    all: {
+        
+        get_audio: {
+            word: '(((с?кинь|включ(и|ай|ишь))( мне)?) )?(музыч?к[ауи]|музон(чик)?|пес(н[яюи]|енк[ауи])|музло|(cmd )?get (music|sound|song|sound)|какую музыку ты любишь|покидай музыки)( (го|давай|мне))?',
+            command: cmd get audio
+        },
+        get_video: {
+            word: [video, get video, видео, видос, кинь видео, кинь видос, скинь видео, скинь видос, можешь скинуть видео, покажи видео, покажи видос, давай видео],
+            command: cmd get video
+        },
+        get_media_gif: {
+            word: [гифка, гифку, гифки, гифочка, гифочку, кинь гифку, скинь гифку, кинь гифочку, скинь гифочку, кинь гиф, скинь гиф, давай гифку, давай гифки, скинь гифки, кинь гифки, гиф, gif],
+            command: cmd get_config_media -addr makargifs
+        },
+        
+        msgstats:         { word: [нагрузка], command: cmd msgstats },
+        banme:            { word: [забань меня], command: cmd say Функция временно отключена },
+        get_photo_pony:   { word: [pony, пони, поняха, поняшка, поняшку, поняху], command: cmd get photo pony },
+        get_photo_ussr:   { word: [soviet union, ussr, ссср, советский союз, коммунизм, комунизм, communism], command: cmd get photo ussr },
+        get_photo_usa:    { word: [usa, capitalism, сша, капитализм], command: cmd get photo usa },
+        get_photo_anime:  { word: [anime, аниме], command: cmd get photo anime },
+        get_photo_dmitri: { word: [дмитрий, дмитрий михайлович, димас, фукс], command: cmd get photo dmitry },
+        get_photo_porn:   { word: [прон, кинь прон, кинь порно, скинь прон, скинь порно, порно, get porno, cmd get porno, porn], command: cmd get photo 733068 },
+        movie:            { word: [фильм, посоветуй фильм], command: cmd fetch -type movie },
+        serial:           { word: [сериал, посоветуй сериал], command: cmd fetch -type movie -sub serial },
+        teachmode_on:     { word: [обучение], command: cmd teachmode on },
+        teachmode_off: {
+            word: [конец обучения, конец обучение, стоп обучение, закончить обучение, стоп, хватит, перестань, выключить обучение, стоп обучения, стоп обучению, конец обучению],
+            command: cmd teachmode off
+        },
+        db_add:    { active: no, part: yes, word: [добавить], command: cmd db add },
+        db_remove: { active: no, part: yes, word: [удалить], command: cmd db remove -a },
+        
+        game_guess_word: { word: [виселица, веселица, висилица], command: cmd play guess_word },
+        game_word_chain: { word: [города, игра города, игра в города, играть в города], command: cmd play word_chain },
+        game_stop:       { word: [стоп игра, конец игры, стоп игре, конец игре, стоп игры], command: cmd play stop },
+        time:            { word: [время, сколько время, который час], command: cmd time },
+        clear_chat:      { word: [очисти], command: cmd fetch -type clear_chat },
+        random_10:       { word: [рандом, рандомное число, случайное число, число от 1 до 10, случайное число от 1 до 10], command: cmd random 0 10 },
+        id:              { word: [id, айди, ид], command: cmd id },
+        reset:           { word: [reset], command: cmd reset },
+        
+        
+        # Редактор картинок
+        krapiva_help: { word: [редактор, ридактор, редактар, ридактар, +редактор, + редактор], command: cmd get_config_text help/image },
+        kek:          { word: [кек, kek], command: cmd get_config_text image_kek },
+        +kek2:        { word: '\+ ?кек|(\+ ?)?(зеркало|отзеркаль|отрази(ть)?)', command: cmd image -preset flip2 },
+        +kek_left:    { word: '\+ ?кек в?лево', command: cmd image -preset flip -hor left },
+        +kek_right:   { word: '\+ ?кек в?право', command: cmd image -preset flip -hor right },
+        +kek_top:     { word: '\+ ?кек в?верх', command: cmd image -preset flip -ver top },
+        +kek_bottom:  { word: '\+ ?кек в?низ', command: cmd image -preset flip -ver bottom },
+        +shakal:      { word: [+шакал, + шакал], command: cmd image -preset shakal },
+        +fap:         { word: [+фап, + фап, +подрочи, + подрочи, +кончи, + кончи], command: cmd image -preset koncha },
+        +tnn:         { word: [+важно, + важно], command: cmd image -preset tnn },
+        +faceshake:   { word: [+лицо, + лицо], command: cmd image -preset faceshake },
+        +shaker:      { word: [+шейк, + шейк, +шейкер, + шейкер, +шэйк, + шэйк, +шэйкер, + шэйкер], command: cmd image -preset shake },
+        +write:       { part: yes, word: [+напиши, + напиши, +напишы, + напишы, +напеши, + напеши, +напешы, + напешы], command: cmd image -preset pixeled -text },
+        +demotivator: { part: yes, word: [+демотиватор, + демотиватор], command: cmd image -preset demotivator -text },
+        +mem:         { part: yes, word: [+мем, + мем], command: cmd image -preset meme },
+        +lgbt:        { part: yes, word: [+лгбт, + лгбт], command: cmd image -preset lgbt },
+        +contrast:    { part: yes, word: [+контраст, + контраст, контраст], command: cmd image -preset contrast },
+        +sad: {
+            word: [+безысходность, + безысходность, +безисходность, + безисходность, +безвыходность, + безвыходность, +sad, + sad],
+            command: [
+                cmd image -preset sad/1,
+                cmd image -preset sad/2,
+                cmd image -preset sad/3,
+                cmd image -preset sad/4,
+                cmd image -preset sad/5,
+                cmd image -preset sad/6,
+                cmd image -preset sad/7,
+                cmd image -preset sad/8
+            ]
+        },
+        +vietnam: {
+            word: [+вьетнам, + вьетнам, +флешбек, + флешбек, +флешбэк, + флешбэк, +vietnam, + vietnam],
+            command: [
+                cmd image -preset vietnam/1,
+                cmd image -preset vietnam/2,
+                cmd image -preset vietnam/3
+            ]
+        },
+        
+        callme:      { part: yes, word: [зови меня, называй меня, моё имя, мое имя], command: cmd callme },
+        fancytext:   { part: yes, word: [ник], command: cmd fancytext },
+        translit:    { part: yes, word: [транслит], command: cmd translit },
+        capsule:     { part: yes, word: [послание], command: cmd capsule },
+        write:       { part: yes, word: [напиши, напеши], command: cmd write },
+        spam:        { active: no, part: yes, word: [спам, наспамь], command: cmd spam },
+        changeleet:  { part: yes, word: [включить шрифт, включи шрифт], command: cmd changeleet },
+        weather:     { part: yes, word: [погода в, погода], command: cmd weather },
+        speechgen:   { part: yes, word: [толкни речь, генератор речей], command: cmd speechgen },
+        description: { part: yes, word: [wiki, вики], command: cmd description },
+        
+        get_photo_meme: {
+            word: [
+                картинка, картинку, картинки, фото, фотка, фотку, мем, мемес, мемас, мемасы, изображение,
+                кинь картинку, кинь картинки, кинь фото, кинь фотку, кинь мем, кинь мемес, кинь мемас, кинь изображение,
+                скинь картинку, скинь картинки, скинь фото, скинь фотку, скинь мем, скинь мемес, скинь мемас, скинь изображение,
+                покажи картинку, покажи картинки, покажи фото, покажи фотку, покажи мем, покажи мемес, покажи мемас, покажи изображение,
+                отправь картинку, отправь картинки, отправь фото, отправь фотку, отправь мем, отправь мемес, отправь мемас, отправь изображение,
+                картинку, картинки, фото, фотку, мем, мемес, мемас, изображение,
+                cmd get picture, get photo, get picture, отправь стикер, скинь своё фото, скинь свое фото,
+                мемас скинь, ну скинь если можно, поделись картинкой, поделись картинками, отошли мне картинку, ещё картинку, еще картинку, демотиватор
+            ],
+            command: [
+                cmd get photo meme_0,
+                cmd get photo meme_1,
+                cmd get photo meme_2,
+                cmd get photo meme_3,
+                cmd get photo meme_4,
+                cmd get photo meme_5
+            ]
+        },
+        universal: {
+            word: [
+                скинь, ну скинь, ну скинь плиз, скидывай, ещё, еще, давай ещё, давай еще, давай годноту,
+                скинь годноту, скинь годноты, скинь что нибудь
+            ],
+            command: [
+                cmd get photo meme_0,
+                cmd get photo meme_1,
+                cmd get audio,
+                cmd get video
+            ]
+        },
+        whoami: {
+            word: [кто я],
+            command: [cmd me, nocmd]
+        },
+        ffact: {
+            word: [факт, скинь факт, го факт, давай факт, интересный факт],
+            command: [
+                cmd fetch -type fact -sub fact_0,
+                cmd fetch -type fact -sub fact_1,
+                cmd fetch -type fact -sub fact_2,
+                cmd fetch -type fact -sub fact_3
+            ]
+        },
+        fjoke: {
+            word: [
+                шутка, шутку, анекдот, анегдот, пошути, расскажи анекдот, го анекдот, го шутку,
+                давай анекдот, весели меня, анекдоты, шутки
+            ],
+            command: [
+                cmd fetch -type joke -sub joke_0,
+                cmd fetch -type joke -sub joke_1,
+                cmd fetch -type joke -sub joke_2,
+                cmd fetch -type joke -sub joke_3,
+                cmd fetch -type joke -sub joke_4,
+                cmd fetch -type joke -sub joke_5
+            ]
+        },
+        satan_bible: {
+            word: [666, библия сатаны],
+            command: [
+                cmd fetch -type satan_bible -sub 0,
+                cmd fetch -type satan_bible -sub 1,
+                cmd fetch -type satan_bible -sub 2,
+                cmd fetch -type satan_bible -sub 3,
+                cmd fetch -type satan_bible -sub 4,
+                cmd fetch -type satan_bible -sub 5
+            ]
+        },
+
+        # HELP
+        help_main: {
+            word: '\+?"?(help|помо[щш]ь|инфо|info|\/?start|список команд|(какие у тебя )?команды|хелп)"?',
+            command: 'cmd get_config_text --list help/contact_link help/main'
+        },
+        help_beta: {
+            word: 'help ?2',
+            command: 'cmd get_config_text --list help/contact_link help/beta'
+        },
+        help_admin: { # Юзерам команда запрещена (см regex.yaml)
+            word: [ahelp],
+            command: 'cmd get_config_text --list help/contact_link help/admin'
+        },
+            
+        eval_me: {
+            word: [пидортест],
+            command: 'cmd get_config_text -sep "" -hash "{@id@}" -begin "pidor/" --list begin end'
+        },
+        
+        wiki: {
+            part: yes,
+            word: [кто такой, кто такая],
+            command: [nocmd, nocmd, cmd description]
+        },
+
+        # SALO DOCS
+        doc_cmd: { part: yes, word: [справка cmd, справка], command: cmd get_config_text -begin help/command/ -addr }
+    },
+    # END ALL
+    
+    ### VK
+    # Команды только для интерфейcа вконтакте
+    networking_vkcom: &ref_cmd_vk {
+        changeleet_female: { word: [женский голос], command: cmd changeleet 7 },
+        changeleet_male:   { word: [мужской голос], command: cmd changeleet 8 },
+        changeleet_0:      { word: [выключить голос, выключи голос, выруби голос, отключи голос, не отвечай голосом], command: cmd changeleet 0 },
+        
+        ### ПАСХАЛКИ
+        egg_salo: { word: [сало], command: cmd write SALO },
+        egg_daun: { word: [ты даун, 'ты даун?'], command: cmd get photo round_face },
+        egg_grem: { word: [похуй, ваще похуй], command: cmd get photo grem },
+        egg_dratuti: { word: [дратути], command: cmd get photo dratuti },
+        egg_whale: { word: [синий кит, синийкит, тихий дом, тихийдом, море китов, морекитов, '#синийкит', '#тихийдом', '#морекитов'], command: cmd get_config_media -addr easteregg/синий кит },
+        #egg_666: { word: [666], command: cmd get_config_media -addr easteregg/666 },
+        egg_liz: { word: [лизь, ':*', '❤❤', '❤❤❤'], command: cmd get_config_media -addr easteregg/лизь },
+        egg_kus: { word: [кусь], command: cmd get_config_media -addr easteregg/кусь },
+        
+        
+        egg_goodnight: {
+            word: [спокойной ночи, споки, споки ноки],
+            command: [
+                nocmd, nocmd, nocmd, nocmd, nocmd, nocmd, nocmd, nocmd,
+                nocmd, nocmd, nocmd, nocmd, nocmd, nocmd, nocmd, 'cmd get_config_media -addr easteregg/goodnight'
+            ]
+        },
+            
+        egg_off: {
+            word: [killbot, cmd killbot],
+            command: [cmd get_config_media -addr easteregg/off]
+        },
+        
+        speech: { part: yes, word: [скажи, скажы], command: [cmd speechfem, cmd speechmal] }
+    },
+    ### VKgroup ( the same as VK )
+    # Для группы вконтакте по-умолчанию действует тот же набор команд, что и для аккаунтов вконтакте
+    networking_vkgroup: *ref_cmd_vk,
+    
+    # Для интерфейcа бота в Телеграм
+    networking_telegram: {},
+    
+    # Для интерфейса бота на веб-сайт
+    webfrontend: {}
+}

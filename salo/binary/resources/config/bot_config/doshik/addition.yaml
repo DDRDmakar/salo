@@ -1,0 +1,19 @@
+
+additions:
+    - { mode: insert, path: fetcher_keyword, value: дошик }
+    - { mode: insert, path: fetcher_keyword, value: говяжий }
+    - { mode: insert, path: fetcher_keyword, value: доширак }
+    - { mode: insert, path: fetcher_keyword, value: лапша }
+    - { mode: insert, path: fetcher_keyword, value: роллтон }
+    - { mode: insert, path: fetcher_keyword, value: ролтон }
+    - { mode: insert, path: fetcher_keyword, value: мивина }
+    - { mode: insert, path: fetcher_keyword, value: doshik }
+    
+    - { mode: insert, path: primary_keyword, value: дошик }
+    - { mode: insert, path: primary_keyword, value: говяжий }
+    - { mode: insert, path: primary_keyword, value: доширак }
+    - { mode: insert, path: primary_keyword, value: лапша }
+    - { mode: insert, path: primary_keyword, value: роллтон }
+    - { mode: insert, path: primary_keyword, value: ролтон }
+    - { mode: insert, path: primary_keyword, value: мивина }
+    - { mode: insert, path: primary_keyword, value: doshik }

@@ -1,0 +1,19 @@
+high_scores:
+  max_n_messages:
+    n_messages: 4111
+    id: salo_networking_vkgroup_420845290
+    name: Диана Сизова
+  game_word_chain:
+    high_score: 102
+    id: salo_networking_vkgroup_168200497
+    name: Элина Мубаракшина
+  game_guess_word:
+    wins: 61
+    loses: 25
+    id: salo_networking_vkgroup_457618772
+    name: Олег Старцев
+  teachmode:
+    max_teachmessages:
+      n_messages: 259
+      id: salo_networking_vkgroup_332850483
+      name: Алина Сучкова

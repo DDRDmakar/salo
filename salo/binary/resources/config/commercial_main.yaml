@@ -1,0 +1,18 @@
+
+
+individual_config_path: resources/config/individual_basic_user_info.yaml
+
+#include answer.yaml#
+#include big_letters.yaml#
+#include cmd.yaml#
+#include coeff.yaml#
+#include error.yaml#
+#include game.yaml#
+#include generator.yaml#
+#include group.yaml#
+#include commercial_help.yaml#
+#include keyword.yaml#
+#include possibility.yaml#
+#include regex.yaml#
+#include media.yaml#
+#include image.yaml#

@@ -1,0 +1,114 @@
+# Ответы на тип сообщений "рандом"
+random_true:     'Result: 1 (true)'
+random_false:    'Result: 0 (false)'
+# Сообщение о том, что человек забанен
+you_banned_24:   You have been banned for 1 hours, wait.
+you_banned:      You have been banned, wait.
+# Сообщение о том, что человек повторяется
+repeat_control:  Не повторяйся!
+# Сообщение о том, что человек повторяется и его скоро забанят
+ban_soon:        "Если не перестанешь флудить, забаню на 1 час."
+# Текст, предшествующий списку посланий, если человек добавил послание
+capsule_prefix:       "Ваше послание сохранено.\nПрежние послания:"
+# Текст, предшествующий списку посланий, если человек не добавлял послание
+capsule_prefix_empty: "Чтобы добавить своё послание, напишите его текст после команды.\nТекущие послания:"
+# Сообщение о том, что жалоба добавлена в базу
+complain_added:       Ваша жалоба сохранена
+# Сообщение о том, что шрифт бота изменён
+# Перед номером шрифта
+leet_changed:         Шрифт бота изменён на тип
+# После номера шрифта
+leet_changed_2:       "Вы всегда можете изменить шрифт бота на обычный, написав ему \"включи шрифт 0\""
+# Префикс для сообщений в диалогах группы
+bot_signature_for_group: '(bot)'
+# RESET
+reset_made: Все режимы сброшены
+
+# Шаблон для вывода даты и времени в красивом виде
+# Для работы с std::put_time
+datetime_answer: "====================\n\
+Дата: %Y-%m-%d \n\
+Месяц: %b \n\
+День года: %j \n\
+День недели: %A \n\
+====================\n\
+Время: %T \n\
+===================="
+
+### TEACHMODE
+teachmode:
+    # Сколько максимально может храниться нераспозаннных сообщений в базе
+    max_count_unsolved: 200
+    # Сообщение о том, что сообщение удалено из базы
+    mes_deleted:        "( Режим обучения - сообщение удалено )\n========"
+    # Сообщение о том, что ответ на сообщение записан в базу
+    mes_saved:          "( Режим обучения - ответ сохранён )\nЕсли вы включили режим обучения по ошибке, напишите \"стоп обучение\".\n========"
+    # Сообщение о том, что нераспознанных сообщений не осталось
+    empty_unsolved:     No more unknown messages
+    # Сообщение о том, что список обучения на проверку пуст (для модератора обучения)
+    empty_teachmode:    No more new messages found
+    # Сообщение о том, что режим оучения выключен
+    teachmode_off:      'Teach mode: off'
+    # Ошибки
+    error:
+        # Ошибка - пользователь не является учителем
+        not_participant:    Error - user is not a teacher
+        # Ошибка - пользователь уже является учителем
+        double_participant: Error - user is already a teacher
+        # Ошибка - введённая фраза для обучения пуста
+        nophrase:           Error - input phrase for teachmode is empty
+        # Ложное срабатывание в групповом лиалоге на сообщение типа "доброе утро"
+        fetched_without_botname: "Error - message fetched without bot name\nЧтобы продолжить общаться с ботом, выйдите из режима обучения.\nКоманда: \"стоп обучение\""
+        # Запрещено обучать бота в групповом диалоге
+        forbidden_in_conf:       "Error - teachmode forbidden in conversations.\nОбучать бота в групповом диалоге запрещено.\nЧтобы выйти из режима обучения, напишите боту \"стоп обучение\", или продолжите обучение бота в личных сообщениях."
+        # Запрещено включать обучение в групповом диалоге
+        forbidden_start_in_conf: "Error - forbidden to start teachmode in conversations.\nВключать режим обучения в групповом диалоге запрещено."
+        # Запрещённая в режиме обучения фраза
+        forbidden_phrase:   "Error - this phrase is not allowedd in teachmode now.\nЭта фраза запрещена к использованию в режиме обучения. Попробуйте другую."
+        # Запрещено включать обучение, когда включена игра или изменён шрифт
+        forbidden_start_in_game_or_leet: "Error - forbidden to start teachmode while playing game or with changed leet.\nЗапрещено включать обучение во время игры или с изменённым шрифтом.\nвы можете написать боту \"reset\", чтобы выйти из всех режимов."
+    # Можно ли обучать бота в групповом диалоге
+    in_conf: false
+    # Можно ли включать обучение, когда включена игра или изменён шрифт
+    in_game_or_leet: false
+    # Добавлять ли с пустой пометкой принадлежности к определённому боту, или же не с пустой.
+    add_answers_as_default: false
+
+
+### ANSWER_DB
+# Ответы на команды. редактирующие базу
+an_db_answer_added:      Answer added to DB     # Пара фраза-ответ добавлена в базу
+an_db_answer_deleted:    Answer deleted from DB # Пара фраза-ответ удалена из базы
+an_db_answer_not_found:  Answer not found       # Пара фраза-ответ не найдена
+# Ответ не уникален, чтобы удалить его, нужно указать соответствующую ему фразу
+an_db_answer_doubled:    "Answer is not unique, check all variants and delete answer using cmd answer_db remove -p 'phrase' -a 'answer'"
+an_db_complain_added:    Complain added # Жалоба на плохой ответ добавлена
+
+### ANSWER PARTS
+
+part_banned:      banned   # ... забанен
+part_unbanned:    unbanned # ... разбанен
+part_result:      'Result:' # Результат: ...
+part_added_to:    added to   # ... добавлен в ...
+part_deleted:     deleted    # ... удалён
+part_changed_to:  changed to # ... изменён на ...
+part_hours:       hours      # ... часов
+part_username:    username   # имя пользователя ...
+part_after_date:  от рождества Христова # ... от рождества Христова
+part_time_after:    через    # через ...
+part_time_before:   назад    # ... назад
+part_num_symbol:    'Символ:'   # Символ: ...
+part_num_divisors:  'Делители:' # Делители: ...
+
+status_creator:    (creator) # Создатель - высший приоритет
+status_admin:      (admin)   # Администратор
+status_superadmin: (super admin) # Администратор с повышенными привилегиями
+status_user:       (user)    # Простой пользователь
+status_unknown:    (unknown type) # Неизвестный тип пользователя
+
+answer_template:
+    changeuserstatus: 'Статус пользователя "{@id@}" изменён на "{@status@}" - {@statusname@}.'
+    attachment_added: 'Медиа-контент с id "{@link@}" добавлен в базу. Тип: "{@type@}" Подтип: "{@subtype@}".'
+    attachment_deleted: 'Медиа-контент с id "{@link@}" удалён.'
+    banned: 'Пользователь {@id@} забанен на {@time@} часов.'
+    unbanned: 'Пользователь {@id@} разбанен.'

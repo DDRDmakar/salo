@@ -1,0 +1,7 @@
+# SALO
+
+database_name:   SALODATABASE
+bot_name:        bogdan
+bot_name_public: Богдан
+
+#include ../../main.yaml#

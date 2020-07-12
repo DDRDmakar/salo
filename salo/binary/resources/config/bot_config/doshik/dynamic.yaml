@@ -1,0 +1,19 @@
+high_scores:
+  max_n_messages:
+    n_messages: 12808
+    id: doshik_networking_vkgroup_420845290
+    name: Диана Сизова
+  game_word_chain:
+    high_score: 51
+    id: doshik_networking_vkgroup_31483231
+    name: Саша Асай
+  game_guess_word:
+    wins: 436
+    loses: 30
+    id: doshik_networking_vkgroup_443320100
+    name: Максим Мельник
+  teachmode:
+    max_teachmessages:
+      n_messages: 90
+      id: doshik_networking_vkgroup_465691111
+      name: Маша Шай

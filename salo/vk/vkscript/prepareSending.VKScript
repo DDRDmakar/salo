@@ -1,0 +1,45 @@
+/*
+*
+*  Copyright ©, 2015-2020. All Rights Reserved.
+*
+*    Autors:
+*    Motylenok Mikhail
+*    Makarevich Nikita
+*
+*    This code is privately owned and is a commercial secret. We do not provide
+*    code to anyone without the written agreement. Copying, publication, use
+*    for commercial or non-commercial purposes without the consent
+*    of the authors is a violation of applicable law.
+*
+*/
+
+
+var peer = Args.chid;
+var usr = Args.usid;
+
+API.account.setOnline({"voip":0});
+API.messages.setActivity({"peer_id":peer, "type":"typing"});
+API.messages.markAsRead({"peer_id": peer});
+var user = API.users.get({"user_ids":usr})[0]; //get user data
+var group = API.groups.isMember({"user_id": usr, "group_id":126196970});
+
+var chatname = "Unnamed Chat";
+var chatusers = -1;
+
+if(peer > 2000000000)
+{
+    var localchatid = peer - 2000000000;
+    var chatobj = API.messages.getChat({"chat_id":localchatid});
+    chatname = chatobj.title;
+    chatusers = chatobj.users.length;
+}
+
+
+//return data
+return({ "name":user.first_name,
+         "last":user.last_name,
+         "grpmbr": group,
+         "chatusers": chatusers,
+         "chatname": chatname,
+         "status": "ALL_OK"
+        });

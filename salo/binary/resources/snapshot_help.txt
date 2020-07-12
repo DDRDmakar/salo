@@ -1,0 +1,35 @@
+>>> snapshot help  - displays this help screen
+
+>>> snapshot new [SNAPSHOT NAME]  - creates new snapshot, sets it as active snapshot
+
+>>> snapshot load [SNAPSHOT NAME]  - loads snapshot from disk, sets it as active, and starts bots on it
+
+>>> snapshot exit  - closes active snapshot, so you can load or create another snapshot
+
+>>> snapshot show  - displays all current information about snapshots, bots, and interfaces
+
+>>> snapshot default [SNAPSHOT NAME]  - sets snapshot as default, so it auto-loads on startup
+If run with empty argument, or with word "none": just disables auto-load on startup
+
+>>> snapshot bot add [BOT NAME]  - add new bot, and attach to a current active snapshot
+
+>>> snapshot bot delete [BOT NAME]  - stopping and permanantly deleting bot whith all child-interfaces
+
+>>> snapshot bot pause [BOT NAME]  - toggles a bot pause.
+
+>>> snapshot interface add [BOT NAME]  - shows dialog, and add new interface to the selected bot
+
+>>> snapshot interface delete [BOT NAME]  - shows dialog, and permanently delete interface from bot 
+after interface deletion you STRONGLY advised to restart bots using next command
+
+>>> snapshot password delete [BOT NAME] - shows dialog, resets choosen password. 
+You can enter a new password again on next iterface start.
+
+>>> snapshot start  - starts all bots (bots is not started when created), if needed, starts new threads for them.
+Additionaly, this command works as restarter - already working bots will be stopped and started again
+Generaly, method is - all bots will be started after it, if some bots or interfaces were already started,
+they will be restarted. 
+
+>>> snapshot stop  - stops all bots. All bots will be down after it
+
+>>> snapshot convreloadcfg - refresh config info (synonym: "reloadcfg")

@@ -1,0 +1,19 @@
+high_scores:
+  max_n_messages:
+    n_messages: 979
+    id: dedmoroz_networking_vkgroup_139277178
+    name: Семён Бисеров
+  game_word_chain:
+    high_score: 41
+    id: dedmoroz_networking_vkgroup_474364394
+    name: Анастасия Лебедева
+  teachmode:
+    max_teachmessages:
+      n_messages: 19
+      id: dedmoroz_networking_vkgroup_275516783
+      name: Настя Белоусова
+  game_guess_word:
+    wins: 19
+    loses: 0
+    id: dedmoroz_networking_vkgroup_551268440
+    name: Kentos Lee

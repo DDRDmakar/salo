@@ -1,0 +1,7 @@
+# SALO
+
+database_name:   GRIBDATABASE
+bot_name:        commercial
+bot_name_public: Бот
+
+#include ../../commercial_main.yaml#

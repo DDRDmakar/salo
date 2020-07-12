@@ -1,0 +1,16 @@
+additions:
+    - { mode: insert, path: fetcher_keyword, value: сало }
+    - { mode: insert, path: fetcher_keyword, value: salo }
+    
+    - { mode: insert, path: primary_keyword, value: сало }
+    - { mode: insert, path: primary_keyword, value: salo }
+    - { mode: insert, path: primary_keyword, value: сало интеллект }
+    - { mode: insert, path: primary_keyword, value: salo intellect }
+    - { mode: insert, path: primary_keyword, value: салоинтеллект }
+    - { mode: insert, path: primary_keyword, value: salointellect }
+    
+    - { mode: set, path: interfaces_are_multiple, value: true }
+    
+    # Enable database editing commands
+    - { mode: set, path: cmd/all/db_add/active,    value: yes }
+    - { mode: set, path: cmd/all/db_remove/active, value: yes }

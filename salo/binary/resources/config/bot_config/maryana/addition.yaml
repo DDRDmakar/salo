@@ -1,0 +1,119 @@
+# Help head    
+help_contact_link: &ref_help_contact_link
+"Привет, я Марьяна - разговорный чат-бот на платформе \"Сало Интеллект\". \n\
+Здесь ты прочитаешь, что я умею делать \n\
+ \n\
+SaloIntellect (с) \n\
+by muxamed666 and DDRDmakar \n\
+ \n\
+Наших ботов можешь найти: \n\
+ВКонтакте: https://vk.com/saloint_club \n\
+На нашем сайте: http://saloint.com \n\
+ \n\
+Вы можете подписаться на нашу группу \n\
+https://vk.com/saloint_club \n\
+Там много интересного. \n\
+ \n\
+Об обнаруженных ошибках сообщай в нашу группу. \n\
+❤❤❤❤❤❤❤❤❤❤❤❤ \n\
+"
+
+# for usual users
+help_main: &ref_help_main
+"=========================== \n\
+SALO - Справка пользователя \n\
+=========================== \n\
+help / info / помощь / инфо / хелп - эта справка \n\
+=========================== \n\
+> > > Команды \n\
+🎨 картинка - кинуть картинку \n\
+🎧 музыка - кинуть музыку \n\
+🎬 видео - кинуть видео \n\
+💻 гиф   - кинуть гифку \n\
+📢 скажи - перевести текст в звук \n\
+🎨 зеркало + картинка - отзеркалить фото \n\
+🎨 редактор - редактор изображений \n\
+⏳ время - текущие время и дата сервера \n\
+👾 зови меня <...> - Поменять имя (обращение бота к вам) \n\
+💵 оцени <...> - даёт оценку (можно картинку) \n\
+💾 обучение - обучать бота \n\
+. конец обучения - закончить обучение \n\
+💽 добавить 'фраза' 'ответ' - Добавить ответ. Кавычки нужны. \n\
+💽 удалить 'ответ' - Удалить ответ бота. Кавычки нужны \n\
+🎤 включить голос - включить режим голосовых ответов \n\
+. выключить голос - выйти из режима голосовых ответов \n\
+⚠ help2 - Дополнительные команды \n\
+=========================== \n\
+> > > Специальные возможности: \n\
+📟 <математический пример> - калькулятор \n\
+📋 <...или...или...> - выбор из нескольких вариантов \n\
+⚡ повтори <...> - повторение фразы \n\
+✔️ вероятность / инфа <...> - определение вероятности (%) \n\
+🔎 что такое <...> - информация из википедии \n\
+=========================== \n\
+"
+
+# additional help
+help_beta: &ref_help_beta
+"> > > Дополнительные команды: \n\
+▪ прон - 🌚🌚 ну вы поняли \n\
+▪ пидортест - Покажет, насколько вы пидор \n\
+"
+
+# help for teachers
+help_teacher: &ref_help_teacher
+"РЕЖИМ ОБУЧЕНИЯ \n\
+Бот будет присылать сообщения, вам нужно будет вписывать ответы на них. \n\
+Если сообщение не нужно сохранять, то напишите \"del\" или просто \"П\", чтобы пропустить его. \n\
+Чтобы выйти из режима обучения, напишите \"Стоп обучение\" или \"Конец обучения\". \n\
+======================\n\
+❗ ПИШИТЕ ОТВЕТЫ В ЖЕНСКОМ РОДЕ.\n\
+❗ Ответы должны быть ПОШЛЫМИ, а не оскорбительными.\n\
+❗ Не называйте конкретных личностей, чтобы никого не обидеть.\n\
+Спасибо за содействие, вы реально очень помогаете! \n\
+======================"
+
+additions:
+    - { mode: insert, path: fetcher_keyword, value: марья }
+    - { mode: insert, path: fetcher_keyword, value: мария }
+    - { mode: insert, path: fetcher_keyword, value: дикая }
+    - { mode: insert, path: fetcher_keyword, value: шлюха }
+    - { mode: insert, path: fetcher_keyword, value: эй шлюха }
+    - { mode: insert, path: fetcher_keyword, value: ты шлюха }
+    - { mode: insert, path: fetcher_keyword, value: marya }
+    - { mode: insert, path: fetcher_keyword, value: maria }
+    - { mode: insert, path: fetcher_keyword, value: маня }
+    
+    - { mode: insert, path: primary_keyword, value: марья }
+    - { mode: insert, path: primary_keyword, value: мария }
+    - { mode: insert, path: primary_keyword, value: дикая }
+    - { mode: insert, path: primary_keyword, value: шлюха }
+    - { mode: insert, path: primary_keyword, value: эй шлюха }
+    - { mode: insert, path: primary_keyword, value: ты шлюха }
+    - { mode: insert, path: primary_keyword, value: marya }
+    - { mode: insert, path: primary_keyword, value: maria }
+    - { mode: insert, path: primary_keyword, value: маня }
+    
+    - { mode: insert, path: primary_keyword, value: марьяна }
+    - { mode: insert, path: primary_keyword, value: maryana }
+    - { mode: insert, path: primary_keyword, value: mariana }
+    - { mode: insert, path: primary_keyword, value: марьяна дикая }
+    - { mode: insert, path: primary_keyword, value: дикая марьяна }
+    - { mode: insert, path: primary_keyword, value: марья дикая }
+    - { mode: insert, path: primary_keyword, value: дикая марья }
+    
+    # Allow open teaching
+    - { mode: set, path: available_teachmode_auto_approve, value: true }
+    - { mode: insert, path: cmd_rights/db/rights, value: 2 }
+    
+    # Enable database editing commands
+    - { mode: set, path: cmd/all/db_add/active,    value: yes }
+    - { mode: set, path: cmd/all/db_remove/active, value: yes }
+    
+    # Teachable bot help
+    #- { mode: set, path: 'cmd/all/multiword_multicommand/help_main/command/[0]', value: cmd get_config_text --list help/contact_link help/main_teachable }
+    - { mode: set, path: media_text/help/contact_link, value: *ref_help_contact_link }
+    - { mode: set, path: media_text/help/main, value: *ref_help_main }
+    - { mode: set, path: media_text/help/beta, value: *ref_help_beta }
+    - { mode: set, path: media_text/help/teacher, value: *ref_help_teacher }
+    - { mode: set, path: media_text/help/teacher_teachable, value: *ref_help_teacher }

@@ -1,0 +1,19 @@
+high_scores:
+  max_n_messages:
+    n_messages: 6985
+    id: shava_networking_vkgroup_507745239
+    name: Катя Сафронова
+  game_word_chain:
+    high_score: 62
+    id: shava_networking_vkgroup_299737855
+    name: Yandere Likhteberg
+  teachmode:
+    max_teachmessages:
+      n_messages: 141
+      id: shava_networking_vkgroup_437680250
+      name: Таня Воронова
+  game_guess_word:
+    wins: 92
+    loses: 32
+    id: shava_networking_vkgroup_244786456
+    name: Степан Федяев

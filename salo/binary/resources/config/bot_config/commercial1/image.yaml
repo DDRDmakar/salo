@@ -1,0 +1,14 @@
+image_preset:
+    pixeled:
+        filters:
+            annotate:
+                _filename_out: output.png
+                text: "<test>"
+                max_line_length: 45
+                max_lines_count: 14
+                _width: 1080
+                _height: 720
+                color_text: white
+                color_background: black
+                _font: /home/montekekler/engine/krapiva/resources/font1.ttf
+                font_size: 35

@@ -1,0 +1,29 @@
+
+# ANIMEBOT
+
+database_name:   MARYANA
+bot_name:        maryana
+bot_name_public: Марьяна
+
+individual_config_path: resources/config/individual_basic_user_info.yaml
+
+### NOT USED
+# include ../../main.yaml#
+# include ../../help.yaml#
+# include ../../big_letters.yaml#
+# include ../../cmd.yaml#
+# include ../../game.yaml#
+# include ../../generator.yaml#
+
+### ACTIVE
+#include cmd.yaml#
+#include ../../answer.yaml#
+#include ../../coeff.yaml#
+#include ../../error.yaml#
+#include ../../group.yaml#
+#include ../../keyword.yaml#
+#include ../../possibility.yaml#
+#include ../../regex.yaml#
+#include ../../media.yaml#
+#include ../../image.yaml#
+

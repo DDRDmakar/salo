@@ -1,0 +1,44 @@
+/*
+*
+*  Copyright ©, 2015-2020. All Rights Reserved.
+*
+*    Autors:
+*    Motylenok Mikhail
+*    Makarevich Nikita
+*
+*    This code is privately owned and is a commercial secret. We do not provide
+*    code to anyone without the written agreement. Copying, publication, use
+*    for commercial or non-commercial purposes without the consent
+*    of the authors is a violation of applicable law.
+*
+*/
+
+var today = Args.td;
+var tomonth = Args.tm;
+var msgt = Args.mtxt;
+
+var fd = API.friends.get({"fields":"bdate"});
+
+var i = 0;
+var cel = 0;
+
+while(i < fd.count)
+{
+    var bd = fd.items[i].bdate;
+    if(bd != null)
+    {
+        var arr_cr = bd.split(".");
+        
+        if(today == arr_cr[0] && tomonth == arr_cr[1])
+        {
+            //return fd.items[i];
+            API.messages.send({"user_id":fd.items[i].id, "message": msgt});
+            cel = cel + 1;
+        }
+    }
+    
+i = i + 1;
+}
+
+
+return cel;

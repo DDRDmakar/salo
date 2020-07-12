@@ -1,0 +1,7 @@
+# SALO
+
+database_name:   SALODATABASE
+bot_name:        editor
+bot_name_public: бот-редактор
+
+#include ../../commercial_main.yaml#

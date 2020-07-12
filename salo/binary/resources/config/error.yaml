@@ -1,0 +1,47 @@
+### ERRORS
+
+error:
+    yaml_error:        Error - incorrect DOM tree processing
+    empty_get_config:  Error - target node is empty string, not a string, or it does not exist
+    cross_ban:         Error - user should be banned/unbanned from account he/she belongs to
+    image_immutable_parameter:    "Error - parameters, which begin with \"_\" cannot be changed by external user.\nТекст аргумента должен быть заключён в кавычки."
+    too_many_arguments:  Error - too many arguments
+    regex:             "Fatal: Regex parsing error\nВыйдите из режима обучения и сообщите разработчикам об ошибке."
+    out_of_range:      "Error - number is out of range, converter failed.\nНекорректное число, ошибка преобразования."
+    unknown_exception: Error - unknown exception!
+    forbidden_answer:  Error - forbidden content!
+    too_long_description_query: Error - too long description query.
+    image_no_filters_found:  Error - incorrect preset, no filters found!
+    
+error_incorrect_attachment_type:  Error - incorrect attachment type
+error_incorrect_arguments:        Error - incorrect arguments
+error_empty_arguments:            Error - empty arguments
+error_empty_config_media:         Error - empty media attachment in config
+error_incorrect_config:    Error - incorrect config
+error_incorrect_command:   Error - incorrect command
+error_incorrect_theme:     Error - saved theme is incorrect! ( no answers found )
+error_incorrect_symbol:    Error - incorrect symbol
+error_incorrect_input:     Error - incorrect input
+error_empty_command:       Error - empty command
+error_empty_description:   Error - description not found
+error_incorrect_status:    Error - incorrect user status
+error_user_rights:         Error - not enough user rights
+error_ban_admin:       Error - this user can't be banned
+error_big_value:       Error - too big value
+error_long_name:       Error - too long name
+error_unknown_name:    Error - this user does not exist
+error_empty_answer:    Error - generated answer is empty
+error_repeat_name:     Ошибка - это имя уже занято.
+error_no_big_letters:  Error - big letters alphabet not found
+
+empty_db_typical:     Error - empty database of this type
+empty_db_attachment:  Error - empty attachments database of this type
+empty_db_story:       Error - empty stories database of this type
+empty_db_notfound:    Error - empty notfound database
+empty_db_person:      Error - empty person database
+empty_db_time:        Error - empty time database
+empty_db_place:       Error - empty place database
+empty_db_reason:      Error - empty reason database
+empty_db_empty:       Error - empty empty database
+empty_db_confidence:  Error - empty confidence database
+empty_db_solution:    Error - empty solution database

@@ -1,0 +1,28 @@
+{
+	"compiler": "g++",
+	"compiler_params": "-ggdb -O0 -march=native -std=c++11 -D buildid='\"fastbuild\"' -g -Wall -D _KOSTILI",
+	
+	"linker_params": 
+		"-lcryptm -lpthread -lcurl -lyaml-cpp -L ../libcryptm -I /usr/include/mysql `mysql_config --libs` -lgmpxx -lgmp -I /usr/local/include/ -L /usr/local/lib/libyaml-cpp.a",
+
+	"linker_output_file": "salobin",
+
+	"postprocessing_shell": "file salobin",
+	"postprocessing_if_failed": false,
+
+	"sources_endings": [".cpp"],
+	"headers_endings": [".h"],
+
+	"untracked_action": "ask",
+
+	"macrotargets":
+	{
+		"generic": ["../*.cpp"],
+		"conveer": ["../conveer/*.cpp"],
+		"vkcom": ["../vk/*.cpp"],
+		"telegram": ["../telegram/*.cpp"],
+		"web": ["../web/*.cpp"],
+		"stats": ["../statistics/*.cpp"]
+	}
+
+}
