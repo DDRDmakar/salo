@@ -1,0 +1,14 @@
+{
+	"image_filename": "scrs_shapka.png",
+	"font_filename": "fonts/impact.ttf",
+
+	"textblock_X": 25,
+	"textblock_Y": 50,
+	"textsize": 25,
+	"text_color_RGB": [255, 255, 255],
+
+	"left_upper_X": 0,
+	"left_upper_Y": 0,
+	"right_lower_X": 1363,
+	"right_lower_Y": 343
+}

@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<head>
+	<title>SCRSd</title>
+</head>
+
+<b>Welcome to SCRSd network testing page. </b>
+<br> 
+If you can see this, network is ok :)
+<br><hr>

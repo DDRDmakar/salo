@@ -1,0 +1,23 @@
+{
+	"compiler": "g++",
+	"compiler_params": " ",
+	
+	"linker_params": 
+		" -I/usr/local/include/ImageMagick `Magick++-config --cxxflags --cppflags` `Magick++-config --ldflags --libs` `pkg-config --cflags --libs opencv4` -lyaml-cpp -I /usr/local/include/ -L /usr/local/lib/libyaml-cpp.a",
+
+	"linker_output_file": "krapiva",
+
+	"postprocessing_shell": "",
+	"postprocessing_if_failed": false,
+
+	"sources_endings": [".cpp"],
+	"headers_endings": [".h"],
+
+	"untracked_action": "ask",
+
+	"macrotargets":
+	{
+		"krapiva_macrotarget": ["*.cpp"]
+	}
+
+}
